@@ -26,15 +26,14 @@ $(function() {
     
     $.post("/new_contact", contact, function(data) {
       if (data.result) {
-        handlers.addContact(0, contact);  
+        handlers.addContact(0, contact); 
+        $('#firstname').val("");
+        $('#lastname').val("");
+        $('#email').val(""); 
       } else {
         alert("Unable to create contact.");
       }
     }, 'json');
-  });
-  $("#delete_contact").on('click', function() {
-    var email = $("#email").val();
-
   });
 
 });
